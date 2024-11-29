@@ -1,0 +1,327 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+
+<div class="container main-container">
+    <div class="d-flex justify-content-end align-items-center gap-2">
+        <SfSwitch @bind-Checked="isChecked" TChecked="bool?" ValueChange="Change"></SfSwitch> <span>@toogleText</span>
+    </div>
+
+    <div class="container-custom">
+
+        <!-- #region Feature Name Card -->
+        <SfCard CssClass="card name-card">
+            <CardHeader>
+                <img src="/images/logo.png" style="width:6rem" />
+            </CardHeader>
+            <CardContent>
+                <ul style="text-align:start;font-weight:bold">
+                    <li>Test Product</li>
+                    <li>User</li>
+                    <li>Number of Tests</li>
+                    <li>Browser Available</li>
+                    <li>VPN</li>
+                    <li>Test Groups</li>
+                    <li>Test Scheduling</li>
+                    <li>Temp Mail Service</li>
+                    <li>Shared Windows Web Nodes </li>
+                    <li>Shared Linux Web Nodes</li>
+                    <li>Shared Mac Web Nodes</li>
+                    <li>Add'l Users</li>
+                    <li>Windows App Testing</li>
+                    <li>Mobile App Testing</li>
+                    <li>Export Tests</li>
+                    <li>Test Environments</li>
+                    <li>Dedicated Windows Web Nodes</li>
+                    <li>Dedicated Linux Web Nodes</li>
+                    <li>Dedicated Mac Web Nodes</li>
+                </ul>
+            </CardContent>
+        </SfCard>
+        <!-- #endregion -->
+        <!-- #region Community card -->
+        <SfCard CssClass="card community" onclick="@{
+            ()=>{stringChecked="com";}
+}">
+            <CardHeader>
+                <div class="radio-button-position">
+                    <SfRadioButton Name="options" Value="com" @bind-Checked="stringChecked"></SfRadioButton>
+                </div>
+                <h3>Community Free</h3>
+            </CardHeader>
+            <CardContent>
+                <ul>
+                    <li>&nbsp;1</li>
+                    <li>&nbsp;1</li>
+                    <li> 10</li>
+                    <li> Edge</li>
+                </ul>
+            </CardContent>
+        </SfCard>
+        <!-- #endregion -->
+        <!-- #region Standard card -->
+        <SfCard CssClass="card standard" onclick="@{
+            ()=>{stringChecked="stan";}
+}">
+            <CardHeader>
+                <div class="radio-button-position">
+                    <SfRadioButton Name="options" Value="stan" @bind-Checked="stringChecked"></SfRadioButton>
+                </div>
+                <h3>Standard <span>@GetPrice(standardPricePerMonth)</span></h3>
+            </CardHeader>
+            <CardContent>
+                <ul>
+                    <li>1</li>
+                    <li> 1 (max 3 devices)</li>
+                    <li> Unlimited</li>
+                    <li> Edge</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li> $9.99/month</li>
+                    <li> $79/node/month </li>
+                    <li> $49/node/month </li>
+                    <li>&nbsp;</li>
+                    <li> $25/user/month </li>
+                </ul>
+
+            </CardContent>
+        </SfCard>
+
+
+        <!-- #endregion -->
+        <!-- #region Professional card -->
+        <SfCard CssClass="card pro" onclick="@{
+            ()=>{stringChecked="pro";}
+}">
+            <CardHeader>
+                <div class="radio-button-position">
+                    <SfRadioButton Name="options" Value="pro" @bind-Checked="stringChecked"></SfRadioButton>
+                </div>
+                <h3>Professional <span>@GetPrice(professionalPricePerMonth)</span></h3>
+            </CardHeader>
+            <CardContent>
+                <ul>
+                    <li> 3</li>
+                    <li> 1 (max 3 devices)</li>
+                    <li> Unlimited</li>
+                    <li> Chrome, Edge, Firefox</li>
+                    <li><img src="/images/accept.png" style="width:1rem" /></li>
+                    <li><img src="/images/accept.png" style="width:1rem" /></li>
+                    <li>Coming soon</li>
+                    <li> $9.99/month</li>
+                    <li> $79/node/month </li>
+                    <li> $49/node/month </li>
+                    <li> $99/node/month </li>
+                    <li> $25/user/month </li>
+                    <li>Coming soon</li>
+                    <li>Coming soon</li>
+                    <li> $.25/action or step</li>
+                </ul>
+            </CardContent>
+        </SfCard>
+
+
+        <!-- #endregion -->
+        <!-- #region Enterprise card -->
+        <SfCard CssClass="card enterprise" onclick="@{
+            ()=>{stringChecked="ent";}
+}">
+            <CardHeader>
+                <div class="radio-button-position">
+                    <SfRadioButton Name="options" Value="ent" @bind-Checked="stringChecked"></SfRadioButton>
+                </div>
+                <h3>Enterprise <span>@GetPrice(enterprisePricePerMonth)</span></h3>
+            </CardHeader>
+            <CardContent>
+                <ul>
+                    <li>  Unlimited </li>
+                    <li>  1 (max 3 devices) </li>
+                    <li> Unlimited </li>
+                    <li> Chrome, Edge, Firefox </li>
+                    <li><img src="/images/accept.png" style="width:1rem" /></li>
+                    <li><img src="/images/accept.png" style="width:1rem" /></li>
+                    <li>Coming soon</li>
+                    <li>$9.99/month</li>
+                    <li> $79/node/month </li>
+                    <li> $49/node/month </li>
+                    <li> $99/node/month </li>
+                    <li> $25/user/month </li>
+                    <li>Coming soon</li>
+                    <li>Coming soon</li>
+                    <li>$.25/action or step</li>
+                    <li><img src="/images/accept.png" style="width:1rem" /></li>
+                    <li>  $119/node/month </li>
+                    <li> $79/node/month </li>
+                    <li> $149/node/month </li>
+                </ul>
+            </CardContent>
+        </SfCard>
+
+
+        <!-- #endregion -->
+
+
+    </div>
+</div>
+
+
+
+
+@code {
+    private bool? isChecked { get; set; } = true;
+    private string toogleText { get; set; } = "Yearly";
+    private decimal standardPricePerMonth = 25;
+    private decimal professionalPricePerMonth = 75;
+    private decimal enterprisePricePerMonth = 99;
+    private string stringChecked = "com";
+
+    /// <summary>
+    /// Change Frequency toggle
+    /// </summary>
+    /// <param name="args"></param>
+    private void Change(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool?> args)
+    {
+        var val = (bool)isChecked;
+        if (val)
+            toogleText = "Monthly";
+        else
+            toogleText = "Yearly";
+        StateHasChanged();
+    }
+
+    /// <summary>
+    /// Get Price By Frequency
+    /// </summary>
+    /// <param name="basePrice">Accept base price per month</param>
+    /// <returns>"$"+Base price * Freqeuncy+"/Month"</returns>
+    private string GetPrice(decimal basePrice)
+    {
+        var val = (bool)isChecked;
+        if (val)
+            return "$" + basePrice * 1 + "/Month";
+        else
+            return "$" + basePrice * 12 + "/Year";
+    }
+}
+
+<style>
+    .container {
+        gap: 10px;
+        display: flex
+    }
+
+    .main-container {
+        flex-direction: column
+    }
+
+    .radio-button-position {
+        position: absolute;
+        right: 0;
+        top: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: start;
+        background-color: #fff;
+        justify-content: start;
+        min-width: 250px
+    }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .card ul li {
+                margin: 13px 0;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+    }
+
+    .name-card:hover {
+        background-color: unset !important;
+        border-color: #adb5bd !important;
+        box-shadow: unset !important;
+    }
+
+    .community {
+        background-color: #A8E6CF;
+    }
+
+    .standard {
+        background-color: #DCEDC1;
+    }
+
+    .pro {
+        background-color: #FFD3B6;
+    }
+
+    .enterprise {
+        background-color: #FFAAA5;
+    }
+    .e-radio:checked + label:hover::after {
+        background-color: green !important;
+    }
+
+    .e-radio:checked + label::before {
+        background-color: #fff;
+        border-color: green !important;
+    }
+
+    .e-radio:checked + label::after {
+        background-color: green !important;
+        color: green !important;
+    }
+
+    .container-custom {
+        display: flex;
+        gap: 10px;
+        overflow: auto;
+    }
+
+    .e-switch-wrapper:hover .e-switch-handle.e-switch-active, .e-css.e-switch-wrapper:hover .e-switch-handle.e-switch-active {
+        background-color: green;
+    }
+
+    .e-switch-wrapper:hover .e-switch-inner.e-switch-active .e-switch-on, .e-css.e-switch-wrapper:hover .e-switch-inner.e-switch-active .e-switch-on {
+        background-color: green;
+        color: #fff;
+    }
+
+    .e-switch-wrapper .e-switch-handle.e-switch-active, .e-css.e-switch-wrapper .e-switch-handle.e-switch-active {
+        background-color: green;
+    }
+
+    .e-switch-wrapper .e-switch-on, .e-css.e-switch-wrapper .e-switch-on {
+        background-color: green;
+    }
+
+    @@media only screen and (max-width: 1000px) and (min-width:600px) {
+        .name-card {
+            position: fixed;
+            left: 0;
+            z-index: 9;
+            width: 250px;
+            height: 764px;
+        }
+
+        .community {
+            margin-left: 180px
+        }
+    }
+</style>
